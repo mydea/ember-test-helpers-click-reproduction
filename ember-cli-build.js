@@ -4,21 +4,28 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
-    // Add options here
+    'ember-d3': {
+      only: [
+        'd3-scale',
+        'd3-selection',
+        'd3-array',
+        'd3-axis',
+        'd3-collection',
+        'd3-time-format',
+        'd3-scale',
+        'd3-shape',
+        'd3-format',
+        'd3-timer',
+        'd3-time',
+        'd3-color',
+        'd3-transition',
+        'd3-interpolate',
+        'd3-ease',
+        'd3-dispatch',
+        'd3-path'
+      ]
+    }
   });
-
-  // Use `app.import` to add additional libraries to the generated
-  // output files.
-  //
-  // If you need to use different assets in different
-  // environments, specify an object as the first parameter. That
-  // object's keys should be the environment name and the values
-  // should be the asset to use in that environment.
-  //
-  // If the library that you are including contains AMD or ES6
-  // modules that you would like to import into your application
-  // please specify an object with the list of modules as keys
-  // along with the exports of each module as its value.
 
   return app.toTree();
 };
